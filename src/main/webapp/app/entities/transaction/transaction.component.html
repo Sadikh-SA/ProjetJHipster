@@ -1,0 +1,93 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jHipsterApp.transaction.home.title">Transactions</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-transaction" [routerLink]="['/transaction/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="jHipsterApp.transaction.home.createLabel">
+            Create a new Transaction
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="transactions?.length === 0">
+        <span jhiTranslate="jHipsterApp.transaction.home.notFound">No transactions found</span>
+    </div>
+    <div class="table-responsive" *ngIf="transactions?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="jHipsterApp.transaction.dateEnvoie">Date Envoie</span></th>
+            <th><span jhiTranslate="jHipsterApp.transaction.montant">Montant</span></th>
+            <th><span jhiTranslate="jHipsterApp.transaction.dateRetrait">Date Retrait</span></th>
+            <th><span jhiTranslate="jHipsterApp.transaction.comm">Comm</span></th>
+            <th><span jhiTranslate="jHipsterApp.transaction.commExp">Comm Exp</span></th>
+            <th><span jhiTranslate="jHipsterApp.transaction.commRec">Comm Rec</span></th>
+            <th><span jhiTranslate="jHipsterApp.transaction.taxe">Taxe</span></th>
+            <th><span jhiTranslate="jHipsterApp.transaction.status">Status</span></th>
+            <th><span jhiTranslate="jHipsterApp.transaction.codeTransaction">Code Transaction</span></th>
+            <th><span jhiTranslate="jHipsterApp.transaction.idExp">Id Exp</span></th>
+            <th><span jhiTranslate="jHipsterApp.transaction.idDest">Id Dest</span></th>
+            <th><span jhiTranslate="jHipsterApp.transaction.idUserExp">Id User Exp</span></th>
+            <th><span jhiTranslate="jHipsterApp.transaction.idUserRec">Id User Rec</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let transaction of transactions ;trackBy: trackId">
+                <td><a [routerLink]="['/transaction', transaction.id, 'view' ]">{{transaction.id}}</a></td>
+                <td>{{transaction.dateEnvoie | date:'mediumDate'}}</td>
+                <td>{{transaction.montant}}</td>
+                <td>{{transaction.dateRetrait | date:'mediumDate'}}</td>
+                <td>{{transaction.comm}}</td>
+                <td>{{transaction.commExp}}</td>
+                <td>{{transaction.commRec}}</td>
+                <td>{{transaction.taxe}}</td>
+                <td>{{transaction.status}}</td>
+                <td>{{transaction.codeTransaction}}</td>
+                <td>
+                    <div *ngIf="transaction.idExp">
+                        <a [routerLink]="['/client', transaction.idExp?.id, 'view' ]" >{{transaction.idExp?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="transaction.idDest">
+                        <a [routerLink]="['/client', transaction.idDest?.id, 'view' ]" >{{transaction.idDest?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    {{transaction.idUserExp?.login}}
+                </td>
+                <td>
+                    {{transaction.idUserRec?.login}}
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/transaction', transaction.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/transaction', transaction.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/transaction', { outlets: { popup: transaction.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

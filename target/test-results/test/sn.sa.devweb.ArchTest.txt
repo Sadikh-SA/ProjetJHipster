@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: sn.sa.devweb.ArchTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.04 s - in sn.sa.devweb.ArchTest

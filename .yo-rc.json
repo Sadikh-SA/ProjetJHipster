@@ -1,0 +1,45 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "sn.sa.devweb",
+      "nativeLanguage": "fr"
+    },
+    "jhipsterVersion": "6.3.1",
+    "applicationType": "monolith",
+    "baseName": "JHipster",
+    "packageName": "sn.sa.devweb",
+    "packageFolder": "sn/sa/devweb",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ZjEyNGRlM2Q4ODdmZWQwMTEyMDJhN2FiZjhhNzc5ODgzZGE5MDg1OWM1Y2ExNGEyYzE3MGNlNDQ5NjZkYTQ2MWEzODBmNzQxNGFjMjM3ZjY3M2I3ZjZhZTk2MjBkNzNjZGVlYWJlYjk3MWU3ZTAxOGNiZTkzZWM0NmE5YTFlNTI=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "fr",
+    "languages": [
+      "fr",
+      "en"
+    ],
+    "blueprints": []
+  }
+}

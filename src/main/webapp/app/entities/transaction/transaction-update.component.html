@@ -1,0 +1,189 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-transaction-heading" jhiTranslate="jHipsterApp.transaction.home.createOrEditLabel">Create or edit a Transaction</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jHipsterApp.transaction.dateEnvoie" for="field_dateEnvoie">Date Envoie</label>
+                    <div class="input-group">
+                        <input id="field_dateEnvoie" type="text" class="form-control" name="dateEnvoie" ngbDatepicker  #dateEnvoieDp="ngbDatepicker" formControlName="dateEnvoie"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateEnvoieDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('dateEnvoie').invalid && (editForm.get('dateEnvoie').dirty || editForm.get('dateEnvoie').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('dateEnvoie').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jHipsterApp.transaction.montant" for="field_montant">Montant</label>
+                    <input type="number" class="form-control" name="montant" id="field_montant"
+                           formControlName="montant"/>
+                    <div *ngIf="editForm.get('montant').invalid && (editForm.get('montant').dirty || editForm.get('montant').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('montant').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('montant')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jHipsterApp.transaction.dateRetrait" for="field_dateRetrait">Date Retrait</label>
+                    <div class="input-group">
+                        <input id="field_dateRetrait" type="text" class="form-control" name="dateRetrait" ngbDatepicker  #dateRetraitDp="ngbDatepicker" formControlName="dateRetrait"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateRetraitDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jHipsterApp.transaction.comm" for="field_comm">Comm</label>
+                    <input type="number" class="form-control" name="comm" id="field_comm"
+                           formControlName="comm"/>
+                    <div *ngIf="editForm.get('comm').invalid && (editForm.get('comm').dirty || editForm.get('comm').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('comm').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('comm')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jHipsterApp.transaction.commExp" for="field_commExp">Comm Exp</label>
+                    <input type="number" class="form-control" name="commExp" id="field_commExp"
+                           formControlName="commExp"/>
+                    <div *ngIf="editForm.get('commExp').invalid && (editForm.get('commExp').dirty || editForm.get('commExp').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('commExp').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('commExp')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jHipsterApp.transaction.commRec" for="field_commRec">Comm Rec</label>
+                    <input type="number" class="form-control" name="commRec" id="field_commRec"
+                           formControlName="commRec"/>
+                    <div *ngIf="editForm.get('commRec').invalid && (editForm.get('commRec').dirty || editForm.get('commRec').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('commRec').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('commRec')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jHipsterApp.transaction.taxe" for="field_taxe">Taxe</label>
+                    <input type="number" class="form-control" name="taxe" id="field_taxe"
+                           formControlName="taxe"/>
+                    <div *ngIf="editForm.get('taxe').invalid && (editForm.get('taxe').dirty || editForm.get('taxe').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('taxe').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('taxe')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jHipsterApp.transaction.status" for="field_status">Status</label>
+                    <input type="text" class="form-control" name="status" id="field_status"
+                           formControlName="status"/>
+                    <div *ngIf="editForm.get('status').invalid && (editForm.get('status').dirty || editForm.get('status').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('status').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jHipsterApp.transaction.codeTransaction" for="field_codeTransaction">Code Transaction</label>
+                    <input type="number" class="form-control" name="codeTransaction" id="field_codeTransaction"
+                           formControlName="codeTransaction"/>
+                    <div *ngIf="editForm.get('codeTransaction').invalid && (editForm.get('codeTransaction').dirty || editForm.get('codeTransaction').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('codeTransaction').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('codeTransaction')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jHipsterApp.transaction.idExp" for="field_idExp">Id Exp</label>
+                    <select class="form-control" id="field_idExp" name="idExp" formControlName="idExp">
+                        <option *ngIf="!editForm.get('idExp').value" [ngValue]="null" selected></option>
+                        <option [ngValue]="clientOption.id === editForm.get('idExp').value?.id ? editForm.get('idExp').value : clientOption" *ngFor="let clientOption of clients; trackBy: trackClientById">{{clientOption.id}}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('idExp').invalid && (editForm.get('idExp').dirty || editForm.get('idExp').touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('idExp').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jHipsterApp.transaction.idDest" for="field_idDest">Id Dest</label>
+                    <select class="form-control" id="field_idDest" name="idDest" formControlName="idDest">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="clientOption.id === editForm.get('idDest').value?.id ? editForm.get('idDest').value : clientOption" *ngFor="let clientOption of clients; trackBy: trackClientById">{{clientOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jHipsterApp.transaction.idUserExp" for="field_idUserExp">Id User Exp</label>
+                    <select class="form-control" id="field_idUserExp" name="idUserExp" formControlName="idUserExp">
+                        <option *ngIf="!editForm.get('idUserExp').value" [ngValue]="null" selected></option>
+                        <option [ngValue]="userOption.id === editForm.get('idUserExp').value?.id ? editForm.get('idUserExp').value : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('idUserExp').invalid && (editForm.get('idUserExp').dirty || editForm.get('idUserExp').touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('idUserExp').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jHipsterApp.transaction.idUserRec" for="field_idUserRec">Id User Rec</label>
+                    <select class="form-control" id="field_idUserRec" name="idUserRec" formControlName="idUserRec">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id === editForm.get('idUserRec').value?.id ? editForm.get('idUserRec').value : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

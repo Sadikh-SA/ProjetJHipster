@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: sn.sa.devweb.security.DomainUserDetailsServiceIT
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.487 s - in sn.sa.devweb.security.DomainUserDetailsServiceIT

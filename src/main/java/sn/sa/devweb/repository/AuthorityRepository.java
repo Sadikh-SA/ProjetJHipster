@@ -1,0 +1,11 @@
+package sn.sa.devweb.repository;
+
+import sn.sa.devweb.domain.Authority;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+/**
+ * Spring Data JPA repository for the {@link Authority} entity.
+ */
+public interface AuthorityRepository extends JpaRepository<Authority, String> {
+}
