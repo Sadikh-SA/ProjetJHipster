@@ -55,46 +55,19 @@
       <change afterPath="$PROJECT_DIR$/src/test/javascript/spec/app/entities/transaction/transaction-update.component.spec.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/javascript/spec/app/entities/transaction/transaction.component.spec.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/javascript/spec/app/entities/transaction/transaction.service.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.jhipster/Transaction.json" beforeDir="false" afterPath="$PROJECT_DIR$/.jhipster/Transaction.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.yo-rc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.yo-rc.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sn/sa/devweb/config/CacheConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sn/sa/devweb/config/CacheConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sn/sa/devweb/domain/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sn/sa/devweb/domain/Transaction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/config/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/application-dev.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/config/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/application-prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config/liquibase/changelog/20191009211748_added_entity_Transaction.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/liquibase/changelog/20191009211748_added_entity_Transaction.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config/liquibase/fake-data/transaction.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/liquibase/fake-data/transaction.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/config/liquibase/master.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/liquibase/master.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/app/entities/entity.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/app/entities/entity.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/app/entities/transaction/transaction-detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/app/entities/transaction/transaction-detail.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/app/entities/transaction/transaction-update.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/app/entities/transaction/transaction-update.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/app/entities/transaction/transaction-update.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/app/entities/transaction/transaction-update.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/app/entities/transaction/transaction.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/app/entities/transaction/transaction.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/app/layouts/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/app/layouts/navbar/navbar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/app/shared/model/transaction.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/app/shared/model/transaction.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/i18n/en/global.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/i18n/en/global.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/i18n/en/transaction.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/i18n/en/transaction.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/i18n/fr/global.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/i18n/fr/global.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/i18n/fr/transaction.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/i18n/fr/transaction.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sn/sa/devweb/web/rest/TransactionResourceIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sn/sa/devweb/web/rest/TransactionResourceIT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/javascript/spec/app/entities/transaction/transaction.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/javascript/spec/app/entities/transaction/transaction.service.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cache-loader/46e020a75435ec8cd2cac9850e0a2e1f.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/cache-loader/46e020a75435ec8cd2cac9850e0a2e1f.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cache-loader/4c95c5c54692d56c2cc1b56090b0be4c.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/cache-loader/4c95c5c54692d56c2cc1b56090b0be4c.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cache-loader/6cc9524a9b4f6cc0570e55b55e76fff1.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/cache-loader/6cc9524a9b4f6cc0570e55b55e76fff1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cache-loader/74a1daaeb14b83d1fcb2de3676091144.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/cache-loader/74a1daaeb14b83d1fcb2de3676091144.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cache-loader/7d16b5ff8db78469717bf24170c7b233.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/cache-loader/7d16b5ff8db78469717bf24170c7b233.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cache-loader/8da6ead80f0c74e206dbbce9f30d2719.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/cache-loader/8da6ead80f0c74e206dbbce9f30d2719.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cache-loader/8e8c595c0210134eb8c41f266d55e276.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/cache-loader/8e8c595c0210134eb8c41f266d55e276.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cache-loader/96016c62b0c5175080b308383e2c3cee.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/cache-loader/96016c62b0c5175080b308383e2c3cee.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/config/liquibase/master.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config/liquibase/master.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sn/sa/devweb/config/CacheConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sn/sa/devweb/config/CacheConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/app/2.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/app/2.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/app/global.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/app/global.bundle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/app/main.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/app/main.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/i18n/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/i18n/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/i18n/fr.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/i18n/fr.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/app/polyfills.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/app/polyfills.bundle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../jhipster/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../jhipster/.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../jhipster/.eslintignore" beforeDir="false" afterPath="$PROJECT_DIR$/../jhipster/.eslintignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../jhipster/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/../jhipster/.eslintrc.json" afterDir="false" />
@@ -491,6 +464,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="1RyvI5Nn6nMn88c8xwbM8kX8Ds6" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -532,7 +512,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1570652066370</updated>
-      <workItem from="1570652072949" duration="8593000" />
+      <workItem from="1570652072949" duration="14598000" />
     </task>
     <servers />
   </component>
