@@ -134,6 +134,21 @@
                         </small>
                     </div>
                 </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jHipsterApp.transaction.commSys" for="field_commSys">Comm Sys</label>
+                    <input type="number" class="form-control" name="commSys" id="field_commSys"
+                           formControlName="commSys"/>
+                    <div *ngIf="editForm.get('commSys').invalid && (editForm.get('commSys').dirty || editForm.get('commSys').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('commSys').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('commSys')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
 
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="jHipsterApp.transaction.idExp" for="field_idExp">Id Exp</label>

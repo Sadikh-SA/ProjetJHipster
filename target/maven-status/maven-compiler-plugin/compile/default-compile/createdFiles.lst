@@ -26,6 +26,7 @@ sn/sa/devweb/web/rest/errors/ErrorConstants.class
 sn/sa/devweb/web/rest/AuditResource.class
 sn/sa/devweb/domain/PersistentAuditEvent.class
 sn/sa/devweb/service/UserService.class
+sn/sa/devweb/domain/Transaction.class
 sn/sa/devweb/config/LoggingConfiguration.class
 META-INF/spring-configuration-metadata.json
 sn/sa/devweb/domain/AbstractAuditingEntity_.class
@@ -37,7 +38,9 @@ sn/sa/devweb/service/UsernameAlreadyUsedException.class
 sn/sa/devweb/web/rest/vm/ManagedUserVM.class
 sn/sa/devweb/web/rest/vm/KeyAndPasswordVM.class
 sn/sa/devweb/config/CloudDatabaseConfiguration.class
+sn/sa/devweb/repository/TransactionRepository.class
 sn/sa/devweb/web/rest/AccountResource$AccountResourceException.class
+sn/sa/devweb/domain/Transaction_.class
 sn/sa/devweb/web/rest/errors/EmailNotFoundException.class
 sn/sa/devweb/config/LiquibaseConfiguration.class
 sn/sa/devweb/web/rest/errors/FieldErrorVM.class
@@ -46,6 +49,8 @@ sn/sa/devweb/security/jwt/TokenProvider.class
 sn/sa/devweb/web/rest/AccountResource$1.class
 sn/sa/devweb/domain/Authority_.class
 sn/sa/devweb/config/WebConfigurer.class
+sn/sa/devweb/web/rest/TransactionResource.class
+sn/sa/devweb/web/rest/ClientResource.class
 sn/sa/devweb/security/SecurityUtils.class
 sn/sa/devweb/security/SpringSecurityAuditorAware.class
 sn/sa/devweb/domain/User.class
@@ -63,7 +68,10 @@ sn/sa/devweb/domain/PersistentAuditEvent_.class
 sn/sa/devweb/web/rest/errors/LoginAlreadyUsedException.class
 sn/sa/devweb/config/DatabaseConfiguration.class
 sn/sa/devweb/web/rest/UserResource.class
+sn/sa/devweb/domain/Client.class
+sn/sa/devweb/domain/Client_.class
 sn/sa/devweb/domain/Authority.class
+sn/sa/devweb/repository/ClientRepository.class
 sn/sa/devweb/web/rest/errors/ExceptionTranslator.class
 sn/sa/devweb/repository/PersistenceAuditEventRepository.class
 sn/sa/devweb/web/rest/UserJWTController$JWTToken.class

@@ -25,6 +25,7 @@
       "taxe": "Taxe",
       "status": "Status",
       "codeTransaction": "Code Transaction",
+      "commSys": "Comm Sys",
       "idExp": "Id Exp",
       "idDest": "Id Dest",
       "idUserExp": "Id User Exp",

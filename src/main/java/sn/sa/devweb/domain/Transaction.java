@@ -58,11 +58,17 @@ public class Transaction implements Serializable {
     @Column(name = "code_transaction", nullable = false, unique = true)
     private Double codeTransaction;
 
+    @NotNull
+    @Column(name = "comm_sys", nullable = false)
+    private Double commSys;
+
     @ManyToOne(optional = false)
     @NotNull
+    @JsonIgnoreProperties("transactions")
     private Client idExp;
 
     @ManyToOne
+    @JsonIgnoreProperties("transactions")
     private Client idDest;
 
     @ManyToOne(optional = false)
@@ -200,6 +206,19 @@ public class Transaction implements Serializable {
         this.codeTransaction = codeTransaction;
     }
 
+    public Double getCommSys() {
+        return commSys;
+    }
+
+    public Transaction commSys(Double commSys) {
+        this.commSys = commSys;
+        return this;
+    }
+
+    public void setCommSys(Double commSys) {
+        this.commSys = commSys;
+    }
+
     public Client getIdExp() {
         return idExp;
     }
@@ -282,6 +301,7 @@ public class Transaction implements Serializable {
             ", taxe=" + getTaxe() +
             ", status='" + getStatus() + "'" +
             ", codeTransaction=" + getCodeTransaction() +
+            ", commSys=" + getCommSys() +
             "}";
     }
 }

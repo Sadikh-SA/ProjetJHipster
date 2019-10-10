@@ -72,6 +72,10 @@ public class TransactionResourceIT {
     private static final Double UPDATED_CODE_TRANSACTION = 2D;
     private static final Double SMALLER_CODE_TRANSACTION = 1D - 1D;
 
+    private static final Double DEFAULT_COMM_SYS = 1D;
+    private static final Double UPDATED_COMM_SYS = 2D;
+    private static final Double SMALLER_COMM_SYS = 1D - 1D;
+
     @Autowired
     private TransactionRepository transactionRepository;
 
@@ -122,7 +126,8 @@ public class TransactionResourceIT {
             .commRec(DEFAULT_COMM_REC)
             .taxe(DEFAULT_TAXE)
             .status(DEFAULT_STATUS)
-            .codeTransaction(DEFAULT_CODE_TRANSACTION);
+            .codeTransaction(DEFAULT_CODE_TRANSACTION)
+            .commSys(DEFAULT_COMM_SYS);
         // Add required entity
         Client client;
         if (TestUtil.findAll(em, Client.class).isEmpty()) {
@@ -156,7 +161,8 @@ public class TransactionResourceIT {
             .commRec(UPDATED_COMM_REC)
             .taxe(UPDATED_TAXE)
             .status(UPDATED_STATUS)
-            .codeTransaction(UPDATED_CODE_TRANSACTION);
+            .codeTransaction(UPDATED_CODE_TRANSACTION)
+            .commSys(UPDATED_COMM_SYS);
         // Add required entity
         Client client;
         if (TestUtil.findAll(em, Client.class).isEmpty()) {
@@ -204,6 +210,7 @@ public class TransactionResourceIT {
         assertThat(testTransaction.getTaxe()).isEqualTo(DEFAULT_TAXE);
         assertThat(testTransaction.getStatus()).isEqualTo(DEFAULT_STATUS);
         assertThat(testTransaction.getCodeTransaction()).isEqualTo(DEFAULT_CODE_TRANSACTION);
+        assertThat(testTransaction.getCommSys()).isEqualTo(DEFAULT_COMM_SYS);
     }
 
     @Test
@@ -372,6 +379,24 @@ public class TransactionResourceIT {
 
     @Test
     @Transactional
+    public void checkCommSysIsRequired() throws Exception {
+        int databaseSizeBeforeTest = transactionRepository.findAll().size();
+        // set the field null
+        transaction.setCommSys(null);
+
+        // Create the Transaction, which fails.
+
+        restTransactionMockMvc.perform(post("/api/transactions")
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(transaction)))
+            .andExpect(status().isBadRequest());
+
+        List<Transaction> transactionList = transactionRepository.findAll();
+        assertThat(transactionList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
     public void getAllTransactions() throws Exception {
         // Initialize the database
         transactionRepository.saveAndFlush(transaction);
@@ -389,7 +414,8 @@ public class TransactionResourceIT {
             .andExpect(jsonPath("$.[*].commRec").value(hasItem(DEFAULT_COMM_REC.doubleValue())))
             .andExpect(jsonPath("$.[*].taxe").value(hasItem(DEFAULT_TAXE.doubleValue())))
             .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())))
-            .andExpect(jsonPath("$.[*].codeTransaction").value(hasItem(DEFAULT_CODE_TRANSACTION.doubleValue())));
+            .andExpect(jsonPath("$.[*].codeTransaction").value(hasItem(DEFAULT_CODE_TRANSACTION.doubleValue())))
+            .andExpect(jsonPath("$.[*].commSys").value(hasItem(DEFAULT_COMM_SYS.doubleValue())));
     }
     
     @Test
@@ -411,7 +437,8 @@ public class TransactionResourceIT {
             .andExpect(jsonPath("$.commRec").value(DEFAULT_COMM_REC.doubleValue()))
             .andExpect(jsonPath("$.taxe").value(DEFAULT_TAXE.doubleValue()))
             .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.toString()))
-            .andExpect(jsonPath("$.codeTransaction").value(DEFAULT_CODE_TRANSACTION.doubleValue()));
+            .andExpect(jsonPath("$.codeTransaction").value(DEFAULT_CODE_TRANSACTION.doubleValue()))
+            .andExpect(jsonPath("$.commSys").value(DEFAULT_COMM_SYS.doubleValue()));
     }
 
     @Test
@@ -443,7 +470,8 @@ public class TransactionResourceIT {
             .commRec(UPDATED_COMM_REC)
             .taxe(UPDATED_TAXE)
             .status(UPDATED_STATUS)
-            .codeTransaction(UPDATED_CODE_TRANSACTION);
+            .codeTransaction(UPDATED_CODE_TRANSACTION)
+            .commSys(UPDATED_COMM_SYS);
 
         restTransactionMockMvc.perform(put("/api/transactions")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -463,6 +491,7 @@ public class TransactionResourceIT {
         assertThat(testTransaction.getTaxe()).isEqualTo(UPDATED_TAXE);
         assertThat(testTransaction.getStatus()).isEqualTo(UPDATED_STATUS);
         assertThat(testTransaction.getCodeTransaction()).isEqualTo(UPDATED_CODE_TRANSACTION);
+        assertThat(testTransaction.getCommSys()).isEqualTo(UPDATED_COMM_SYS);
     }
 
     @Test

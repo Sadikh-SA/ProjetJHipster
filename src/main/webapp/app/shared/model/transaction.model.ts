@@ -13,6 +13,7 @@ export interface ITransaction {
   taxe?: number;
   status?: string;
   codeTransaction?: number;
+  commSys?: number;
   idExp?: IClient;
   idDest?: IClient;
   idUserExp?: IUser;
@@ -31,6 +32,7 @@ export class Transaction implements ITransaction {
     public taxe?: number,
     public status?: string,
     public codeTransaction?: number,
+    public commSys?: number,
     public idExp?: IClient,
     public idDest?: IClient,
     public idUserExp?: IUser,

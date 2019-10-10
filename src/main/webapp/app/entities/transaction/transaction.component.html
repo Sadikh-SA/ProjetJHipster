@@ -27,6 +27,7 @@
             <th><span jhiTranslate="jHipsterApp.transaction.taxe">Taxe</span></th>
             <th><span jhiTranslate="jHipsterApp.transaction.status">Status</span></th>
             <th><span jhiTranslate="jHipsterApp.transaction.codeTransaction">Code Transaction</span></th>
+            <th><span jhiTranslate="jHipsterApp.transaction.commSys">Comm Sys</span></th>
             <th><span jhiTranslate="jHipsterApp.transaction.idExp">Id Exp</span></th>
             <th><span jhiTranslate="jHipsterApp.transaction.idDest">Id Dest</span></th>
             <th><span jhiTranslate="jHipsterApp.transaction.idUserExp">Id User Exp</span></th>
@@ -46,6 +47,7 @@
                 <td>{{transaction.taxe}}</td>
                 <td>{{transaction.status}}</td>
                 <td>{{transaction.codeTransaction}}</td>
+                <td>{{transaction.commSys}}</td>
                 <td>
                     <div *ngIf="transaction.idExp">
                         <a [routerLink]="['/client', transaction.idExp?.id, 'view' ]" >{{transaction.idExp?.id}}</a>

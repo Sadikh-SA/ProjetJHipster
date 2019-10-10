@@ -24,7 +24,7 @@ describe('Service Tests', () => {
       httpMock = injector.get(HttpTestingController);
       currentDate = moment();
 
-      elemDefault = new Transaction(0, currentDate, 0, currentDate, 0, 0, 0, 0, 'AAAAAAA', 0);
+      elemDefault = new Transaction(0, currentDate, 0, currentDate, 0, 0, 0, 0, 'AAAAAAA', 0, 0);
     });
 
     describe('Service methods', () => {
@@ -82,7 +82,8 @@ describe('Service Tests', () => {
             commRec: 1,
             taxe: 1,
             status: 'BBBBBB',
-            codeTransaction: 1
+            codeTransaction: 1,
+            commSys: 1
           },
           elemDefault
         );
@@ -114,7 +115,8 @@ describe('Service Tests', () => {
             commRec: 1,
             taxe: 1,
             status: 'BBBBBB',
-            codeTransaction: 1
+            codeTransaction: 1,
+            commSys: 1
           },
           elemDefault
         );

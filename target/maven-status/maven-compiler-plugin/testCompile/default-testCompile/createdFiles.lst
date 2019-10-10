@@ -9,9 +9,11 @@ sn/sa/devweb/web/rest/errors/ExceptionTranslatorIT.class
 sn/sa/devweb/service/AuditEventServiceIT.class
 sn/sa/devweb/service/MailServiceIT.class
 sn/sa/devweb/web/rest/errors/ExceptionTranslatorTestController$TestResponseStatusException.class
+sn/sa/devweb/web/rest/TransactionResourceIT.class
 sn/sa/devweb/web/rest/errors/ExceptionTranslatorTestController$TestDTO.class
 sn/sa/devweb/ArchTest.class
 sn/sa/devweb/web/rest/AuditResourceIT.class
+sn/sa/devweb/web/rest/ClientResourceIT.class
 sn/sa/devweb/web/rest/UserJWTControllerIT.class
 sn/sa/devweb/security/SecurityUtilsUnitTest.class
 sn/sa/devweb/config/WebConfigurerTestController.class

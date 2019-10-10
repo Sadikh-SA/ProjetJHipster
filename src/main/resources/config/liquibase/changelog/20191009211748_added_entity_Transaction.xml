@@ -43,6 +43,9 @@
             <column name="code_transaction" type="double">
                 <constraints nullable="false" unique="true" uniqueConstraintName="ux_transaction_code_transaction" />
             </column>
+            <column name="comm_sys" type="double">
+                <constraints nullable="false" />
+            </column>
             <column name="id_exp_id" type="bigint">
                 <constraints nullable="false" />
             </column>
@@ -87,6 +90,7 @@
             <column name="taxe" type="numeric"/>
             <column name="status" type="string"/>
             <column name="code_transaction" type="numeric"/>
+            <column name="comm_sys" type="numeric"/>
             <column name="id_exp_id" type="numeric"/>
             <column name="id_user_exp_id" type="numeric"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->

@@ -9,14 +9,16 @@
             "relationshipValidateRules": [
                 "required"
             ],
-            "otherEntityField": "id"
+            "otherEntityField": "id",
+            "otherEntityRelationshipName": "transaction"
         },
         {
             "relationshipName": "idDest",
             "otherEntityName": "client",
             "relationshipType": "many-to-one",
             "relationshipValidateRules": [],
-            "otherEntityField": "id"
+            "otherEntityField": "id",
+            "otherEntityRelationshipName": "transaction"
         },
         {
             "relationshipName": "idUserExp",
@@ -99,6 +101,13 @@
             "fieldValidateRules": [
                 "required",
                 "unique"
+            ]
+        },
+        {
+            "fieldName": "commSys",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "required"
             ]
         }
     ],
