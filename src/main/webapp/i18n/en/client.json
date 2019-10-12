@@ -17,7 +17,8 @@
         "title": "Client"
       },
       "numeroPiece": "Numero Piece",
-      "nomComplet": "Nom Complet"
+      "nomComplet": "Nom Complet",
+      "telephone": "Telephone"
     }
   }
 }

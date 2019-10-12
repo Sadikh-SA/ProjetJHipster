@@ -19,6 +19,16 @@
             "fieldValidateRules": [
                 "required"
             ]
+        },
+        {
+            "fieldName": "telephone",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "unique",
+                "minlength"
+            ],
+            "fieldValidateRulesMinlength": "7"
         }
     ],
     "changelogDate": "20191009204952",

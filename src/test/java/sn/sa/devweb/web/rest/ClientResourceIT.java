@@ -39,6 +39,9 @@ public class ClientResourceIT {
     private static final String DEFAULT_NOM_COMPLET = "AAAAAAAAAA";
     private static final String UPDATED_NOM_COMPLET = "BBBBBBBBBB";
 
+    private static final String DEFAULT_TELEPHONE = "AAAAAAAAAA";
+    private static final String UPDATED_TELEPHONE = "BBBBBBBBBB";
+
     @Autowired
     private ClientRepository clientRepository;
 
@@ -82,7 +85,8 @@ public class ClientResourceIT {
     public static Client createEntity(EntityManager em) {
         Client client = new Client()
             .numeroPiece(DEFAULT_NUMERO_PIECE)
-            .nomComplet(DEFAULT_NOM_COMPLET);
+            .nomComplet(DEFAULT_NOM_COMPLET)
+            .telephone(DEFAULT_TELEPHONE);
         return client;
     }
     /**
@@ -94,7 +98,8 @@ public class ClientResourceIT {
     public static Client createUpdatedEntity(EntityManager em) {
         Client client = new Client()
             .numeroPiece(UPDATED_NUMERO_PIECE)
-            .nomComplet(UPDATED_NOM_COMPLET);
+            .nomComplet(UPDATED_NOM_COMPLET)
+            .telephone(UPDATED_TELEPHONE);
         return client;
     }
 
@@ -120,6 +125,7 @@ public class ClientResourceIT {
         Client testClient = clientList.get(clientList.size() - 1);
         assertThat(testClient.getNumeroPiece()).isEqualTo(DEFAULT_NUMERO_PIECE);
         assertThat(testClient.getNomComplet()).isEqualTo(DEFAULT_NOM_COMPLET);
+        assertThat(testClient.getTelephone()).isEqualTo(DEFAULT_TELEPHONE);
     }
 
     @Test
@@ -180,6 +186,24 @@ public class ClientResourceIT {
 
     @Test
     @Transactional
+    public void checkTelephoneIsRequired() throws Exception {
+        int databaseSizeBeforeTest = clientRepository.findAll().size();
+        // set the field null
+        client.setTelephone(null);
+
+        // Create the Client, which fails.
+
+        restClientMockMvc.perform(post("/api/clients")
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(client)))
+            .andExpect(status().isBadRequest());
+
+        List<Client> clientList = clientRepository.findAll();
+        assertThat(clientList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
     public void getAllClients() throws Exception {
         // Initialize the database
         clientRepository.saveAndFlush(client);
@@ -190,7 +214,8 @@ public class ClientResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(client.getId().intValue())))
             .andExpect(jsonPath("$.[*].numeroPiece").value(hasItem(DEFAULT_NUMERO_PIECE.toString())))
-            .andExpect(jsonPath("$.[*].nomComplet").value(hasItem(DEFAULT_NOM_COMPLET.toString())));
+            .andExpect(jsonPath("$.[*].nomComplet").value(hasItem(DEFAULT_NOM_COMPLET.toString())))
+            .andExpect(jsonPath("$.[*].telephone").value(hasItem(DEFAULT_TELEPHONE.toString())));
     }
     
     @Test
@@ -205,7 +230,8 @@ public class ClientResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(client.getId().intValue()))
             .andExpect(jsonPath("$.numeroPiece").value(DEFAULT_NUMERO_PIECE.toString()))
-            .andExpect(jsonPath("$.nomComplet").value(DEFAULT_NOM_COMPLET.toString()));
+            .andExpect(jsonPath("$.nomComplet").value(DEFAULT_NOM_COMPLET.toString()))
+            .andExpect(jsonPath("$.telephone").value(DEFAULT_TELEPHONE.toString()));
     }
 
     @Test
@@ -230,7 +256,8 @@ public class ClientResourceIT {
         em.detach(updatedClient);
         updatedClient
             .numeroPiece(UPDATED_NUMERO_PIECE)
-            .nomComplet(UPDATED_NOM_COMPLET);
+            .nomComplet(UPDATED_NOM_COMPLET)
+            .telephone(UPDATED_TELEPHONE);
 
         restClientMockMvc.perform(put("/api/clients")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -243,6 +270,7 @@ public class ClientResourceIT {
         Client testClient = clientList.get(clientList.size() - 1);
         assertThat(testClient.getNumeroPiece()).isEqualTo(UPDATED_NUMERO_PIECE);
         assertThat(testClient.getNomComplet()).isEqualTo(UPDATED_NOM_COMPLET);
+        assertThat(testClient.getTelephone()).isEqualTo(UPDATED_TELEPHONE);
     }
 
     @Test

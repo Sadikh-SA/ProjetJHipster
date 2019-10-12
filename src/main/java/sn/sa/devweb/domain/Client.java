@@ -30,6 +30,11 @@ public class Client implements Serializable {
     @Column(name = "nom_complet", nullable = false)
     private String nomComplet;
 
+    @NotNull
+    @Size(min = 7)
+    @Column(name = "telephone", nullable = false, unique = true)
+    private String telephone;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -64,6 +69,19 @@ public class Client implements Serializable {
     public void setNomComplet(String nomComplet) {
         this.nomComplet = nomComplet;
     }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public Client telephone(String telephone) {
+        this.telephone = telephone;
+        return this;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override
@@ -88,6 +106,7 @@ public class Client implements Serializable {
             "id=" + getId() +
             ", numeroPiece='" + getNumeroPiece() + "'" +
             ", nomComplet='" + getNomComplet() + "'" +
+            ", telephone='" + getTelephone() + "'" +
             "}";
     }
 }
